@@ -1,0 +1,19 @@
+# .github/workflows/ci.yml — lint and test on every pull request and push to main.
+# No key is needed: the tests replace the AI provider with a fake.
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: pytest -q

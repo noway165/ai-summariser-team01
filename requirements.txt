@@ -1,0 +1,3 @@
+fastapi==0.142.2
+uvicorn==0.54.0
+httpx2==2.13.1   # the HTTP client that calls the AI API

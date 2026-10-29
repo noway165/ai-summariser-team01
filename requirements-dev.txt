@@ -1,0 +1,4 @@
+# requirements-dev.txt — what CI needs: the app's dependencies plus the tools.
+-r requirements.txt
+pytest==9.1.1
+ruff==0.17.0
